@@ -23,5 +23,10 @@ namespace MLMS
             c.Show();
             this.Hide();
         }
+
+        private void okButton_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

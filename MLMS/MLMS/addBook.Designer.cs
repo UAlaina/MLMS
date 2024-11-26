@@ -30,11 +30,11 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(addBook));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.publishDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.editionTextBox = new System.Windows.Forms.TextBox();
+            this.authorTextBox = new System.Windows.Forms.TextBox();
             this.ISBNtextBox = new System.Windows.Forms.TextBox();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.descriptionRichTextBox = new System.Windows.Forms.RichTextBox();
             this.bookTextBox = new System.Windows.Forms.TextBox();
             this.backButton = new System.Windows.Forms.Button();
             this.addButton = new System.Windows.Forms.Button();
@@ -50,11 +50,11 @@
             // groupBox1
             // 
             this.groupBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.groupBox1.Controls.Add(this.dateTimePicker1);
-            this.groupBox1.Controls.Add(this.textBox5);
-            this.groupBox1.Controls.Add(this.textBox3);
+            this.groupBox1.Controls.Add(this.publishDateTimePicker);
+            this.groupBox1.Controls.Add(this.editionTextBox);
+            this.groupBox1.Controls.Add(this.authorTextBox);
             this.groupBox1.Controls.Add(this.ISBNtextBox);
-            this.groupBox1.Controls.Add(this.richTextBox1);
+            this.groupBox1.Controls.Add(this.descriptionRichTextBox);
             this.groupBox1.Controls.Add(this.bookTextBox);
             this.groupBox1.Controls.Add(this.backButton);
             this.groupBox1.Controls.Add(this.addButton);
@@ -73,29 +73,29 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Add Book Details";
             // 
-            // dateTimePicker1
+            // publishDateTimePicker
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(229, 217);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(4);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(265, 22);
-            this.dateTimePicker1.TabIndex = 14;
+            this.publishDateTimePicker.Location = new System.Drawing.Point(229, 217);
+            this.publishDateTimePicker.Margin = new System.Windows.Forms.Padding(4);
+            this.publishDateTimePicker.Name = "publishDateTimePicker";
+            this.publishDateTimePicker.Size = new System.Drawing.Size(265, 22);
+            this.publishDateTimePicker.TabIndex = 14;
             // 
-            // textBox5
+            // editionTextBox
             // 
-            this.textBox5.Location = new System.Drawing.Point(229, 290);
-            this.textBox5.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(265, 22);
-            this.textBox5.TabIndex = 13;
+            this.editionTextBox.Location = new System.Drawing.Point(229, 290);
+            this.editionTextBox.Margin = new System.Windows.Forms.Padding(4);
+            this.editionTextBox.Name = "editionTextBox";
+            this.editionTextBox.Size = new System.Drawing.Size(265, 22);
+            this.editionTextBox.TabIndex = 13;
             // 
-            // textBox3
+            // authorTextBox
             // 
-            this.textBox3.Location = new System.Drawing.Point(229, 165);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(265, 22);
-            this.textBox3.TabIndex = 11;
+            this.authorTextBox.Location = new System.Drawing.Point(229, 165);
+            this.authorTextBox.Margin = new System.Windows.Forms.Padding(4);
+            this.authorTextBox.Name = "authorTextBox";
+            this.authorTextBox.Size = new System.Drawing.Size(265, 22);
+            this.authorTextBox.TabIndex = 11;
             // 
             // ISBNtextBox
             // 
@@ -105,14 +105,14 @@
             this.ISBNtextBox.Size = new System.Drawing.Size(265, 22);
             this.ISBNtextBox.TabIndex = 10;
             // 
-            // richTextBox1
+            // descriptionRichTextBox
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(229, 357);
-            this.richTextBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(265, 110);
-            this.richTextBox1.TabIndex = 9;
-            this.richTextBox1.Text = "";
+            this.descriptionRichTextBox.Location = new System.Drawing.Point(229, 357);
+            this.descriptionRichTextBox.Margin = new System.Windows.Forms.Padding(4);
+            this.descriptionRichTextBox.Name = "descriptionRichTextBox";
+            this.descriptionRichTextBox.Size = new System.Drawing.Size(265, 110);
+            this.descriptionRichTextBox.TabIndex = 9;
+            this.descriptionRichTextBox.Text = "";
             // 
             // bookTextBox
             // 
@@ -144,6 +144,7 @@
             this.addButton.TabIndex = 6;
             this.addButton.Text = "Add Book";
             this.addButton.UseVisualStyleBackColor = true;
+            this.addButton.Click += new System.EventHandler(this.addButton_Click);
             // 
             // label6
             // 
@@ -207,9 +208,9 @@
             this.bookLabel.Location = new System.Drawing.Point(49, 59);
             this.bookLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.bookLabel.Name = "bookLabel";
-            this.bookLabel.Size = new System.Drawing.Size(109, 24);
+            this.bookLabel.Size = new System.Drawing.Size(149, 24);
             this.bookLabel.TabIndex = 0;
-            this.bookLabel.Text = "Book Name";
+            this.bookLabel.Text = "Title of the Book:";
             // 
             // addBook
             // 
@@ -229,11 +230,11 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.DateTimePicker publishDateTimePicker;
+        private System.Windows.Forms.TextBox editionTextBox;
+        private System.Windows.Forms.TextBox authorTextBox;
         private System.Windows.Forms.TextBox ISBNtextBox;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RichTextBox descriptionRichTextBox;
         private System.Windows.Forms.TextBox bookTextBox;
         private System.Windows.Forms.Button backButton;
         private System.Windows.Forms.Button addButton;

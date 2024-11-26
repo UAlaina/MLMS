@@ -35,11 +35,15 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.statusLabel = new System.Windows.Forms.Label();
+            this.statusComboBox = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.statusComboBox);
+            this.groupBox1.Controls.Add(this.statusLabel);
             this.groupBox1.Controls.Add(this.backButton);
             this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.label2);
@@ -118,6 +122,29 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Search by";
             // 
+            // statusLabel
+            // 
+            this.statusLabel.AutoSize = true;
+            this.statusLabel.Location = new System.Drawing.Point(69, 176);
+            this.statusLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.statusLabel.Name = "statusLabel";
+            this.statusLabel.Size = new System.Drawing.Size(44, 16);
+            this.statusLabel.TabIndex = 6;
+            this.statusLabel.Text = "Status";
+            // 
+            // statusComboBox
+            // 
+            this.statusComboBox.FormattingEnabled = true;
+            this.statusComboBox.Items.AddRange(new object[] {
+            "Reserved",
+            "Cancelled",
+            "Not in This Library"});
+            this.statusComboBox.Location = new System.Drawing.Point(239, 176);
+            this.statusComboBox.Margin = new System.Windows.Forms.Padding(4);
+            this.statusComboBox.Name = "statusComboBox";
+            this.statusComboBox.Size = new System.Drawing.Size(160, 24);
+            this.statusComboBox.TabIndex = 7;
+            // 
             // reserveBook
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -141,5 +168,7 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label statusLabel;
+        private System.Windows.Forms.ComboBox statusComboBox;
     }
 }
