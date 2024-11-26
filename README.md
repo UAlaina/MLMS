@@ -2,7 +2,7 @@
 
 ## Overview
 
-The Modern Library Management System (LMS) is a simple desktop application designed to manage various aspects of a library, including book addition, member management, issuing books, and processing payments. The system allows administrators to manage the library's inventory, issue books to members, and receive payments for services.
+The Modern Library Management System (MLMS) is a simple desktop application designed to manage various aspects of a library, including book addition, member management, issuing books, and processing payments. The system allows administrators to manage the library's inventory, issue books to members, and receive payments for services.
 
 ## Features
 
