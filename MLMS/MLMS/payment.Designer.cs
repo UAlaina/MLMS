@@ -31,20 +31,20 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(payment));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.backButton = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.payButton = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.amountTextBox = new System.Windows.Forms.TextBox();
+            this.securityCodeTextBox = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimeDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.cardNoTextBox = new System.Windows.Forms.TextBox();
+            this.emailTextBox = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.nameTextBox = new System.Windows.Forms.TextBox();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.creditCardRadioButton = new System.Windows.Forms.RadioButton();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
@@ -53,20 +53,20 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.backButton);
-            this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.Controls.Add(this.payButton);
             this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.textBox5);
-            this.groupBox1.Controls.Add(this.textBox4);
+            this.groupBox1.Controls.Add(this.amountTextBox);
+            this.groupBox1.Controls.Add(this.securityCodeTextBox);
             this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.dateTimePicker1);
+            this.groupBox1.Controls.Add(this.dateTimeDateTimePicker);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.textBox3);
-            this.groupBox1.Controls.Add(this.textBox2);
+            this.groupBox1.Controls.Add(this.cardNoTextBox);
+            this.groupBox1.Controls.Add(this.emailTextBox);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.nameTextBox);
             this.groupBox1.Controls.Add(this.radioButton2);
-            this.groupBox1.Controls.Add(this.radioButton1);
+            this.groupBox1.Controls.Add(this.creditCardRadioButton);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(13, 13);
@@ -91,17 +91,18 @@
             this.backButton.UseVisualStyleBackColor = false;
             this.backButton.Click += new System.EventHandler(this.backButton_Click);
             // 
-            // button1
+            // payButton
             // 
-            this.button1.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(156, 490);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(123, 41);
-            this.button1.TabIndex = 15;
-            this.button1.Text = "Pay now";
-            this.button1.UseVisualStyleBackColor = false;
+            this.payButton.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.payButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.payButton.Location = new System.Drawing.Point(156, 490);
+            this.payButton.Margin = new System.Windows.Forms.Padding(4);
+            this.payButton.Name = "payButton";
+            this.payButton.Size = new System.Drawing.Size(123, 41);
+            this.payButton.TabIndex = 15;
+            this.payButton.Text = "Pay now";
+            this.payButton.UseVisualStyleBackColor = false;
+            this.payButton.Click += new System.EventHandler(this.payButton_Click);
             // 
             // label7
             // 
@@ -113,21 +114,21 @@
             this.label7.TabIndex = 14;
             this.label7.Text = "Amount";
             // 
-            // textBox5
+            // amountTextBox
             // 
-            this.textBox5.Location = new System.Drawing.Point(192, 394);
-            this.textBox5.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(265, 22);
-            this.textBox5.TabIndex = 13;
+            this.amountTextBox.Location = new System.Drawing.Point(192, 394);
+            this.amountTextBox.Margin = new System.Windows.Forms.Padding(4);
+            this.amountTextBox.Name = "amountTextBox";
+            this.amountTextBox.Size = new System.Drawing.Size(265, 22);
+            this.amountTextBox.TabIndex = 13;
             // 
-            // textBox4
+            // securityCodeTextBox
             // 
-            this.textBox4.Location = new System.Drawing.Point(192, 342);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(265, 22);
-            this.textBox4.TabIndex = 12;
+            this.securityCodeTextBox.Location = new System.Drawing.Point(192, 342);
+            this.securityCodeTextBox.Margin = new System.Windows.Forms.Padding(4);
+            this.securityCodeTextBox.Name = "securityCodeTextBox";
+            this.securityCodeTextBox.Size = new System.Drawing.Size(265, 22);
+            this.securityCodeTextBox.TabIndex = 12;
             // 
             // label6
             // 
@@ -139,13 +140,13 @@
             this.label6.TabIndex = 11;
             this.label6.Text = "Security Code";
             // 
-            // dateTimePicker1
+            // dateTimeDateTimePicker
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(192, 284);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(4);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(265, 22);
-            this.dateTimePicker1.TabIndex = 10;
+            this.dateTimeDateTimePicker.Location = new System.Drawing.Point(192, 284);
+            this.dateTimeDateTimePicker.Margin = new System.Windows.Forms.Padding(4);
+            this.dateTimeDateTimePicker.Name = "dateTimeDateTimePicker";
+            this.dateTimeDateTimePicker.Size = new System.Drawing.Size(265, 22);
+            this.dateTimeDateTimePicker.TabIndex = 10;
             // 
             // label5
             // 
@@ -167,21 +168,21 @@
             this.label4.TabIndex = 8;
             this.label4.Text = "Card Number";
             // 
-            // textBox3
+            // cardNoTextBox
             // 
-            this.textBox3.Location = new System.Drawing.Point(192, 231);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(265, 22);
-            this.textBox3.TabIndex = 7;
+            this.cardNoTextBox.Location = new System.Drawing.Point(192, 231);
+            this.cardNoTextBox.Margin = new System.Windows.Forms.Padding(4);
+            this.cardNoTextBox.Name = "cardNoTextBox";
+            this.cardNoTextBox.Size = new System.Drawing.Size(265, 22);
+            this.cardNoTextBox.TabIndex = 7;
             // 
-            // textBox2
+            // emailTextBox
             // 
-            this.textBox2.Location = new System.Drawing.Point(192, 186);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(265, 22);
-            this.textBox2.TabIndex = 6;
+            this.emailTextBox.Location = new System.Drawing.Point(192, 186);
+            this.emailTextBox.Margin = new System.Windows.Forms.Padding(4);
+            this.emailTextBox.Name = "emailTextBox";
+            this.emailTextBox.Size = new System.Drawing.Size(265, 22);
+            this.emailTextBox.TabIndex = 6;
             // 
             // label3
             // 
@@ -193,13 +194,13 @@
             this.label3.TabIndex = 5;
             this.label3.Text = "Email";
             // 
-            // textBox1
+            // nameTextBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(192, 128);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(265, 22);
-            this.textBox1.TabIndex = 4;
+            this.nameTextBox.Location = new System.Drawing.Point(192, 128);
+            this.nameTextBox.Margin = new System.Windows.Forms.Padding(4);
+            this.nameTextBox.Name = "nameTextBox";
+            this.nameTextBox.Size = new System.Drawing.Size(265, 22);
+            this.nameTextBox.TabIndex = 4;
             // 
             // radioButton2
             // 
@@ -213,17 +214,17 @@
             this.radioButton2.Text = "Pay pal";
             this.radioButton2.UseVisualStyleBackColor = true;
             // 
-            // radioButton1
+            // creditCardRadioButton
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(116, 63);
-            this.radioButton1.Margin = new System.Windows.Forms.Padding(4);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(93, 20);
-            this.radioButton1.TabIndex = 2;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Credit card";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.creditCardRadioButton.AutoSize = true;
+            this.creditCardRadioButton.Location = new System.Drawing.Point(116, 63);
+            this.creditCardRadioButton.Margin = new System.Windows.Forms.Padding(4);
+            this.creditCardRadioButton.Name = "creditCardRadioButton";
+            this.creditCardRadioButton.Size = new System.Drawing.Size(93, 20);
+            this.creditCardRadioButton.TabIndex = 2;
+            this.creditCardRadioButton.TabStop = true;
+            this.creditCardRadioButton.Text = "Credit card";
+            this.creditCardRadioButton.UseVisualStyleBackColor = true;
             // 
             // label2
             // 
@@ -264,20 +265,20 @@
 
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button backButton;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button payButton;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox amountTextBox;
+        private System.Windows.Forms.TextBox securityCodeTextBox;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dateTimeDateTimePicker;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox cardNoTextBox;
+        private System.Windows.Forms.TextBox emailTextBox;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox nameTextBox;
         private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.RadioButton creditCardRadioButton;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
     }

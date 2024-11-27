@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.statusComboBox = new System.Windows.Forms.ComboBox();
+            this.statusLabel = new System.Windows.Forms.Label();
             this.backButton = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.reserveBookButton = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.statusLabel = new System.Windows.Forms.Label();
-            this.statusComboBox = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -45,7 +45,7 @@
             this.groupBox1.Controls.Add(this.statusComboBox);
             this.groupBox1.Controls.Add(this.statusLabel);
             this.groupBox1.Controls.Add(this.backButton);
-            this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.Controls.Add(this.reserveBookButton);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.textBox1);
             this.groupBox1.Controls.Add(this.comboBox1);
@@ -59,6 +59,29 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Reserve Book";
             // 
+            // statusComboBox
+            // 
+            this.statusComboBox.FormattingEnabled = true;
+            this.statusComboBox.Items.AddRange(new object[] {
+            "Reserved",
+            "Cancelled",
+            "Not in This Library"});
+            this.statusComboBox.Location = new System.Drawing.Point(239, 176);
+            this.statusComboBox.Margin = new System.Windows.Forms.Padding(4);
+            this.statusComboBox.Name = "statusComboBox";
+            this.statusComboBox.Size = new System.Drawing.Size(160, 24);
+            this.statusComboBox.TabIndex = 7;
+            // 
+            // statusLabel
+            // 
+            this.statusLabel.AutoSize = true;
+            this.statusLabel.Location = new System.Drawing.Point(69, 176);
+            this.statusLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.statusLabel.Name = "statusLabel";
+            this.statusLabel.Size = new System.Drawing.Size(44, 16);
+            this.statusLabel.TabIndex = 6;
+            this.statusLabel.Text = "Status";
+            // 
             // backButton
             // 
             this.backButton.Location = new System.Drawing.Point(288, 235);
@@ -70,15 +93,16 @@
             this.backButton.UseVisualStyleBackColor = true;
             this.backButton.Click += new System.EventHandler(this.backButton_Click);
             // 
-            // button1
+            // reserveBookButton
             // 
-            this.button1.Location = new System.Drawing.Point(93, 235);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(115, 32);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Reserve book";
-            this.button1.UseVisualStyleBackColor = true;
+            this.reserveBookButton.Location = new System.Drawing.Point(93, 235);
+            this.reserveBookButton.Margin = new System.Windows.Forms.Padding(4);
+            this.reserveBookButton.Name = "reserveBookButton";
+            this.reserveBookButton.Size = new System.Drawing.Size(115, 32);
+            this.reserveBookButton.TabIndex = 4;
+            this.reserveBookButton.Text = "Reserve book";
+            this.reserveBookButton.UseVisualStyleBackColor = true;
+            this.reserveBookButton.Click += new System.EventHandler(this.reserveBookButton_Click);
             // 
             // label2
             // 
@@ -122,29 +146,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Search by";
             // 
-            // statusLabel
-            // 
-            this.statusLabel.AutoSize = true;
-            this.statusLabel.Location = new System.Drawing.Point(69, 176);
-            this.statusLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.statusLabel.Name = "statusLabel";
-            this.statusLabel.Size = new System.Drawing.Size(44, 16);
-            this.statusLabel.TabIndex = 6;
-            this.statusLabel.Text = "Status";
-            // 
-            // statusComboBox
-            // 
-            this.statusComboBox.FormattingEnabled = true;
-            this.statusComboBox.Items.AddRange(new object[] {
-            "Reserved",
-            "Cancelled",
-            "Not in This Library"});
-            this.statusComboBox.Location = new System.Drawing.Point(239, 176);
-            this.statusComboBox.Margin = new System.Windows.Forms.Padding(4);
-            this.statusComboBox.Name = "statusComboBox";
-            this.statusComboBox.Size = new System.Drawing.Size(160, 24);
-            this.statusComboBox.TabIndex = 7;
-            // 
             // reserveBook
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -163,7 +164,7 @@
 
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button backButton;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button reserveBookButton;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.ComboBox comboBox1;
