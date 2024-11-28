@@ -36,7 +36,7 @@
             this.amountTextBox = new System.Windows.Forms.TextBox();
             this.securityCodeTextBox = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.dateTimeDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.expireDatePicker = new System.Windows.Forms.DateTimePicker();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.cardNoTextBox = new System.Windows.Forms.TextBox();
@@ -58,7 +58,7 @@
             this.groupBox1.Controls.Add(this.amountTextBox);
             this.groupBox1.Controls.Add(this.securityCodeTextBox);
             this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.dateTimeDateTimePicker);
+            this.groupBox1.Controls.Add(this.expireDatePicker);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.cardNoTextBox);
@@ -140,13 +140,13 @@
             this.label6.TabIndex = 11;
             this.label6.Text = "Security Code";
             // 
-            // dateTimeDateTimePicker
+            // expireDatePicker
             // 
-            this.dateTimeDateTimePicker.Location = new System.Drawing.Point(192, 284);
-            this.dateTimeDateTimePicker.Margin = new System.Windows.Forms.Padding(4);
-            this.dateTimeDateTimePicker.Name = "dateTimeDateTimePicker";
-            this.dateTimeDateTimePicker.Size = new System.Drawing.Size(265, 22);
-            this.dateTimeDateTimePicker.TabIndex = 10;
+            this.expireDatePicker.Location = new System.Drawing.Point(192, 284);
+            this.expireDatePicker.Margin = new System.Windows.Forms.Padding(4);
+            this.expireDatePicker.Name = "expireDatePicker";
+            this.expireDatePicker.Size = new System.Drawing.Size(265, 22);
+            this.expireDatePicker.TabIndex = 10;
             // 
             // label5
             // 
@@ -270,7 +270,7 @@
         private System.Windows.Forms.TextBox amountTextBox;
         private System.Windows.Forms.TextBox securityCodeTextBox;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.DateTimePicker dateTimeDateTimePicker;
+        private System.Windows.Forms.DateTimePicker expireDatePicker;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox cardNoTextBox;

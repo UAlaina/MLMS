@@ -24,7 +24,7 @@ namespace MLMS
 
         private void memberButton_Click(object sender, EventArgs e)
         {
-            addMember member = new addMember();
+            addMemberForm member = new addMemberForm();
             member.Show();
             this.Hide();
         }

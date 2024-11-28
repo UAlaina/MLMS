@@ -32,12 +32,14 @@
             this.statusComboBox = new System.Windows.Forms.ComboBox();
             this.statusLabel = new System.Windows.Forms.Label();
             this.backButton = new System.Windows.Forms.Button();
-            this.reserveBookButton = new System.Windows.Forms.Button();
+            this.searchButton = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.searchTextBox = new System.Windows.Forms.TextBox();
+            this.searchByComboBox = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.dataGridViewBooks = new System.Windows.Forms.DataGridView();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewBooks)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -45,10 +47,10 @@
             this.groupBox1.Controls.Add(this.statusComboBox);
             this.groupBox1.Controls.Add(this.statusLabel);
             this.groupBox1.Controls.Add(this.backButton);
-            this.groupBox1.Controls.Add(this.reserveBookButton);
+            this.groupBox1.Controls.Add(this.searchButton);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.textBox1);
-            this.groupBox1.Controls.Add(this.comboBox1);
+            this.groupBox1.Controls.Add(this.searchTextBox);
+            this.groupBox1.Controls.Add(this.searchByComboBox);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(13, 13);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
@@ -63,6 +65,7 @@
             // 
             this.statusComboBox.FormattingEnabled = true;
             this.statusComboBox.Items.AddRange(new object[] {
+            "All",
             "Reserved",
             "Cancelled",
             "Not in This Library"});
@@ -93,16 +96,16 @@
             this.backButton.UseVisualStyleBackColor = true;
             this.backButton.Click += new System.EventHandler(this.backButton_Click);
             // 
-            // reserveBookButton
+            // searchButton
             // 
-            this.reserveBookButton.Location = new System.Drawing.Point(93, 235);
-            this.reserveBookButton.Margin = new System.Windows.Forms.Padding(4);
-            this.reserveBookButton.Name = "reserveBookButton";
-            this.reserveBookButton.Size = new System.Drawing.Size(115, 32);
-            this.reserveBookButton.TabIndex = 4;
-            this.reserveBookButton.Text = "Reserve book";
-            this.reserveBookButton.UseVisualStyleBackColor = true;
-            this.reserveBookButton.Click += new System.EventHandler(this.reserveBookButton_Click);
+            this.searchButton.Location = new System.Drawing.Point(93, 235);
+            this.searchButton.Margin = new System.Windows.Forms.Padding(4);
+            this.searchButton.Name = "searchButton";
+            this.searchButton.Size = new System.Drawing.Size(115, 32);
+            this.searchButton.TabIndex = 4;
+            this.searchButton.Text = "Search";
+            this.searchButton.UseVisualStyleBackColor = true;
+            this.searchButton.Click += new System.EventHandler(this.searchButton_Click);
             // 
             // label2
             // 
@@ -114,27 +117,27 @@
             this.label2.TabIndex = 3;
             this.label2.Text = "Search ";
             // 
-            // textBox1
+            // searchTextBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(239, 128);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(160, 22);
-            this.textBox1.TabIndex = 2;
+            this.searchTextBox.Location = new System.Drawing.Point(239, 128);
+            this.searchTextBox.Margin = new System.Windows.Forms.Padding(4);
+            this.searchTextBox.Name = "searchTextBox";
+            this.searchTextBox.Size = new System.Drawing.Size(160, 22);
+            this.searchTextBox.TabIndex = 2;
             // 
-            // comboBox1
+            // searchByComboBox
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.searchByComboBox.FormattingEnabled = true;
+            this.searchByComboBox.Items.AddRange(new object[] {
             "By book name",
             "By author",
             "By ISBN ",
             "By published date"});
-            this.comboBox1.Location = new System.Drawing.Point(239, 76);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(160, 24);
-            this.comboBox1.TabIndex = 1;
+            this.searchByComboBox.Location = new System.Drawing.Point(239, 76);
+            this.searchByComboBox.Margin = new System.Windows.Forms.Padding(4);
+            this.searchByComboBox.Name = "searchByComboBox";
+            this.searchByComboBox.Size = new System.Drawing.Size(160, 24);
+            this.searchByComboBox.TabIndex = 1;
             // 
             // label1
             // 
@@ -146,16 +149,32 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Search by";
             // 
+            // dataGridViewBooks
+            // 
+            this.dataGridViewBooks.AllowUserToAddRows = false;
+            this.dataGridViewBooks.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewBooks.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewBooks.Location = new System.Drawing.Point(13, 380);
+            this.dataGridViewBooks.Name = "dataGridViewBooks";
+            this.dataGridViewBooks.ReadOnly = true;
+            this.dataGridViewBooks.RowHeadersWidth = 51;
+            this.dataGridViewBooks.RowTemplate.Height = 24;
+            this.dataGridViewBooks.Size = new System.Drawing.Size(473, 501);
+            this.dataGridViewBooks.TabIndex = 8;
+            // 
             // reserveBook
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(514, 376);
+            this.ClientSize = new System.Drawing.Size(513, 893);
+            this.Controls.Add(this.dataGridViewBooks);
             this.Controls.Add(this.groupBox1);
             this.Name = "reserveBook";
             this.Text = "reserveBook";
+            this.Load += new System.EventHandler(this.reserveBook_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewBooks)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -164,12 +183,13 @@
 
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button backButton;
-        private System.Windows.Forms.Button reserveBookButton;
+        private System.Windows.Forms.Button searchButton;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.TextBox searchTextBox;
+        private System.Windows.Forms.ComboBox searchByComboBox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label statusLabel;
         private System.Windows.Forms.ComboBox statusComboBox;
+        private System.Windows.Forms.DataGridView dataGridViewBooks;
     }
 }

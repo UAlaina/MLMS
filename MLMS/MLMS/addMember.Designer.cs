@@ -1,6 +1,6 @@
 ﻿namespace MLMS
 {
-    partial class addMember
+    partial class addMemberForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(addMember));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(addMemberForm));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.backButton = new System.Windows.Forms.Button();
             this.addButton = new System.Windows.Forms.Button();
@@ -42,11 +42,19 @@
             this.dobLabel = new System.Windows.Forms.Label();
             this.addressLabel = new System.Windows.Forms.Label();
             this.nameLabel = new System.Windows.Forms.Label();
+            this.passwordLabel = new System.Windows.Forms.Label();
+            this.passwordTextBox = new System.Windows.Forms.TextBox();
+            this.confirmPasswordLabel = new System.Windows.Forms.Label();
+            this.confirmPasswordTextBox = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.confirmPasswordTextBox);
+            this.groupBox1.Controls.Add(this.confirmPasswordLabel);
+            this.groupBox1.Controls.Add(this.passwordTextBox);
+            this.groupBox1.Controls.Add(this.passwordLabel);
             this.groupBox1.Controls.Add(this.backButton);
             this.groupBox1.Controls.Add(this.addButton);
             this.groupBox1.Controls.Add(this.DOBDateTimePicker);
@@ -63,7 +71,7 @@
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox1.Size = new System.Drawing.Size(491, 468);
+            this.groupBox1.Size = new System.Drawing.Size(491, 567);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Add Member Details";
@@ -73,7 +81,7 @@
             this.backButton.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.backButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.backButton.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.backButton.Location = new System.Drawing.Point(295, 385);
+            this.backButton.Location = new System.Drawing.Point(313, 500);
             this.backButton.Margin = new System.Windows.Forms.Padding(4);
             this.backButton.Name = "backButton";
             this.backButton.Size = new System.Drawing.Size(100, 39);
@@ -86,7 +94,7 @@
             // 
             this.addButton.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.addButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addButton.Location = new System.Drawing.Point(67, 385);
+            this.addButton.Location = new System.Drawing.Point(51, 500);
             this.addButton.Margin = new System.Windows.Forms.Padding(4);
             this.addButton.Name = "addButton";
             this.addButton.Size = new System.Drawing.Size(131, 39);
@@ -186,14 +194,50 @@
             this.nameLabel.TabIndex = 0;
             this.nameLabel.Text = "Full name";
             // 
-            // addMember
+            // passwordLabel
+            // 
+            this.passwordLabel.AutoSize = true;
+            this.passwordLabel.Location = new System.Drawing.Point(48, 372);
+            this.passwordLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.passwordLabel.Name = "passwordLabel";
+            this.passwordLabel.Size = new System.Drawing.Size(67, 16);
+            this.passwordLabel.TabIndex = 17;
+            this.passwordLabel.Text = "Password";
+            // 
+            // passwordTextBox
+            // 
+            this.passwordTextBox.Location = new System.Drawing.Point(169, 372);
+            this.passwordTextBox.Margin = new System.Windows.Forms.Padding(4);
+            this.passwordTextBox.Name = "passwordTextBox";
+            this.passwordTextBox.Size = new System.Drawing.Size(265, 22);
+            this.passwordTextBox.TabIndex = 18;
+            // 
+            // confirmPasswordLabel
+            // 
+            this.confirmPasswordLabel.AutoSize = true;
+            this.confirmPasswordLabel.Location = new System.Drawing.Point(34, 429);
+            this.confirmPasswordLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.confirmPasswordLabel.Name = "confirmPasswordLabel";
+            this.confirmPasswordLabel.Size = new System.Drawing.Size(115, 16);
+            this.confirmPasswordLabel.TabIndex = 19;
+            this.confirmPasswordLabel.Text = "Confirm Password";
+            // 
+            // confirmPasswordTextBox
+            // 
+            this.confirmPasswordTextBox.Location = new System.Drawing.Point(169, 423);
+            this.confirmPasswordTextBox.Margin = new System.Windows.Forms.Padding(4);
+            this.confirmPasswordTextBox.Name = "confirmPasswordTextBox";
+            this.confirmPasswordTextBox.Size = new System.Drawing.Size(265, 22);
+            this.confirmPasswordTextBox.TabIndex = 20;
+            // 
+            // addMemberForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(517, 499);
+            this.ClientSize = new System.Drawing.Size(517, 640);
             this.Controls.Add(this.groupBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "addMember";
+            this.Name = "addMemberForm";
             this.Text = "Add Member";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -216,5 +260,9 @@
         private System.Windows.Forms.Label dobLabel;
         private System.Windows.Forms.Label addressLabel;
         private System.Windows.Forms.Label nameLabel;
+        private System.Windows.Forms.TextBox confirmPasswordTextBox;
+        private System.Windows.Forms.Label confirmPasswordLabel;
+        private System.Windows.Forms.TextBox passwordTextBox;
+        private System.Windows.Forms.Label passwordLabel;
     }
 }

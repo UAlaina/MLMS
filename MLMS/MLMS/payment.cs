@@ -34,22 +34,37 @@ namespace MLMS
                 string name = nameTextBox.Text;
                 string email = emailTextBox.Text;
                 string cardNumber = cardNoTextBox.Text;
-                DateTime expireDate = dateTimeDateTimePicker.Value;
+                DateTime expireDate = expireDatePicker.Value;
                 string securityCode = securityCodeTextBox.Text;
-                decimal amount = decimal.Parse(amountTextBox.Text);
+                string amountText = amountTextBox.Text;
+                //decimal amount = decimal.Parse(amountTextBox.Text);
+
+                if (string.IsNullOrWhiteSpace(name) || string.IsNullOrWhiteSpace(email) ||
+                    string.IsNullOrWhiteSpace(cardNumber) || string.IsNullOrWhiteSpace(securityCode) ||
+                    string.IsNullOrWhiteSpace(amountText))
+                {
+                    MessageBox.Show("Please fill in all the required fields.");
+                    return;
+                }
+
+                if (!decimal.TryParse(amountText, out decimal amount))
+                {
+                    MessageBox.Show("Please enter a valid amount.");
+                    return;
+                }
 
                 // Assuming you have a MemberID that is selected or known, for this example let's use a hardcoded value
                 int memberId = 1;  // Replace with the actual MemberID value
 
                 string paymentMethod = creditCardRadioButton.Checked ? "Credit card" : "PayPal";  // Check which payment method is selected
 
-                string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\santh\Documents\GitHub\MLMS\MLMS\MLMS\bin\Debug\Library.mdf;Integrated Security=True;Connect Timeout=30;";
+                string ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\santh\Documents\GitHub\MLMS\MLMS\MLMS\App_Data\Library.mdf;Integrated Security=True;Connect Timeout=30;";
 
                 // Create the SQL query to insert payment details
                 string query = "INSERT INTO Payment (MemberID, PaymentMethod, Name, Email, CardNumber, ExpireDate, SecurityCode, Amount) " +
                                "VALUES (@MemberID, @PaymentMethod, @Name, @Email, @CardNumber, @ExpireDate, @SecurityCode, @Amount)";
 
-                using (SqlConnection conn = new SqlConnection(connectionString))
+                using (SqlConnection conn = new SqlConnection(ConnectionString))
                 {
                     conn.Open();
 
@@ -78,10 +93,56 @@ namespace MLMS
                     }
                 }
             }
+            catch(SqlException sqlEx)
+            {
+                MessageBox.Show("A database error occurred: " + sqlEx.Message);
+            }
             catch (Exception ex)
             {
-                MessageBox.Show("An error occurred: " + ex.Message);
+                MessageBox.Show("An unexpected error occurred: " + ex.Message);
             }
+        }
+        private void ClearPaymentForm()
+        {
+            nameTextBox.Clear();
+            emailTextBox.Clear();
+            cardNoTextBox.Clear();
+            expireDatePicker.Value = DateTime.Now;
+            securityCodeTextBox.Clear();
+            amountTextBox.Clear();
+        }
+
+        private void validatePaymentFields()
+        {
+            // Check if the amount field is empty
+            if (string.IsNullOrWhiteSpace(amountTextBox.Text))
+            {
+                MessageBox.Show("Amount field should be filled out.");
+                return;
+            }
+
+            // Check if the card number is empty
+            if (string.IsNullOrWhiteSpace(cardNoTextBox.Text))
+            {
+                MessageBox.Show("Card number should be filled out.");
+                return;
+            }
+
+            // Check if the expiry date is empty
+            if (expireDatePicker.Value == null || expireDatePicker.Value == DateTime.MinValue)
+            {
+                MessageBox.Show("Expiry date should be filled out.");
+                return;
+            }
+
+            // Proceed with payment processing if all fields are valid
+            ProcessPayment();
+        }
+
+        private void ProcessPayment()
+        {
+            // Logic to process payment
+            MessageBox.Show("Payment processed successfully!");
         }
     }
 }

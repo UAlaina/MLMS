@@ -30,35 +30,35 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(userLogin));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.newUserButton = new System.Windows.Forms.Button();
+            this.passwordTextBox = new System.Windows.Forms.TextBox();
+            this.emailTextBox = new System.Windows.Forms.TextBox();
             this.exitButton = new System.Windows.Forms.Button();
             this.clearButton = new System.Windows.Forms.Button();
             this.loginButton = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.newUserButton = new System.Windows.Forms.Button();
+            this.passwordLabel = new System.Windows.Forms.Label();
+            this.emailLabel = new System.Windows.Forms.Label();
+            this.adminRadioButton = new System.Windows.Forms.RadioButton();
+            this.userRadioButton = new System.Windows.Forms.RadioButton();
+            this.logoPictureBox = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.logoPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.newUserButton);
-            this.groupBox1.Controls.Add(this.textBox2);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.passwordTextBox);
+            this.groupBox1.Controls.Add(this.emailTextBox);
             this.groupBox1.Controls.Add(this.exitButton);
             this.groupBox1.Controls.Add(this.clearButton);
             this.groupBox1.Controls.Add(this.loginButton);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.passwordLabel);
+            this.groupBox1.Controls.Add(this.emailLabel);
             this.groupBox1.Location = new System.Drawing.Point(258, 55);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
@@ -68,22 +68,34 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "User Login";
             // 
-            // textBox2
+            // newUserButton
             // 
-            this.textBox2.Location = new System.Drawing.Point(224, 105);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.PasswordChar = '*';
-            this.textBox2.Size = new System.Drawing.Size(281, 22);
-            this.textBox2.TabIndex = 8;
+            this.newUserButton.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.newUserButton.Location = new System.Drawing.Point(64, 177);
+            this.newUserButton.Margin = new System.Windows.Forms.Padding(4);
+            this.newUserButton.Name = "newUserButton";
+            this.newUserButton.Size = new System.Drawing.Size(100, 28);
+            this.newUserButton.TabIndex = 9;
+            this.newUserButton.Text = "New User";
+            this.newUserButton.UseVisualStyleBackColor = false;
+            this.newUserButton.Click += new System.EventHandler(this.newUserButton_Click);
             // 
-            // textBox1
+            // passwordTextBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(224, 46);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(281, 22);
-            this.textBox1.TabIndex = 7;
+            this.passwordTextBox.Location = new System.Drawing.Point(224, 105);
+            this.passwordTextBox.Margin = new System.Windows.Forms.Padding(4);
+            this.passwordTextBox.Name = "passwordTextBox";
+            this.passwordTextBox.PasswordChar = '*';
+            this.passwordTextBox.Size = new System.Drawing.Size(281, 22);
+            this.passwordTextBox.TabIndex = 8;
+            // 
+            // emailTextBox
+            // 
+            this.emailTextBox.Location = new System.Drawing.Point(224, 46);
+            this.emailTextBox.Margin = new System.Windows.Forms.Padding(4);
+            this.emailTextBox.Name = "emailTextBox";
+            this.emailTextBox.Size = new System.Drawing.Size(281, 22);
+            this.emailTextBox.TabIndex = 7;
             // 
             // exitButton
             // 
@@ -141,86 +153,75 @@
             this.label3.TabIndex = 2;
             this.label3.Text = "abc@gmail.com";
             // 
-            // label2
+            // passwordLabel
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(48, 108);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(67, 16);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Password";
+            this.passwordLabel.AutoSize = true;
+            this.passwordLabel.Location = new System.Drawing.Point(48, 108);
+            this.passwordLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.passwordLabel.Name = "passwordLabel";
+            this.passwordLabel.Size = new System.Drawing.Size(67, 16);
+            this.passwordLabel.TabIndex = 1;
+            this.passwordLabel.Text = "Password";
             // 
-            // label1
+            // emailLabel
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(48, 49);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(116, 16);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "User name / email";
+            this.emailLabel.AutoSize = true;
+            this.emailLabel.Location = new System.Drawing.Point(48, 49);
+            this.emailLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.emailLabel.Name = "emailLabel";
+            this.emailLabel.Size = new System.Drawing.Size(116, 16);
+            this.emailLabel.TabIndex = 0;
+            this.emailLabel.Text = "User name / email";
             // 
-            // radioButton1
+            // adminRadioButton
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(267, 27);
-            this.radioButton1.Margin = new System.Windows.Forms.Padding(4);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(66, 20);
-            this.radioButton1.TabIndex = 10;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Admin";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.adminRadioButton.AutoSize = true;
+            this.adminRadioButton.Location = new System.Drawing.Point(267, 27);
+            this.adminRadioButton.Margin = new System.Windows.Forms.Padding(4);
+            this.adminRadioButton.Name = "adminRadioButton";
+            this.adminRadioButton.Size = new System.Drawing.Size(66, 20);
+            this.adminRadioButton.TabIndex = 10;
+            this.adminRadioButton.TabStop = true;
+            this.adminRadioButton.Text = "Admin";
+            this.adminRadioButton.UseVisualStyleBackColor = true;
             // 
-            // radioButton2
+            // userRadioButton
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(360, 27);
-            this.radioButton2.Margin = new System.Windows.Forms.Padding(4);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(90, 20);
-            this.radioButton2.TabIndex = 11;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "user Login";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.userRadioButton.AutoSize = true;
+            this.userRadioButton.Location = new System.Drawing.Point(360, 27);
+            this.userRadioButton.Margin = new System.Windows.Forms.Padding(4);
+            this.userRadioButton.Name = "userRadioButton";
+            this.userRadioButton.Size = new System.Drawing.Size(90, 20);
+            this.userRadioButton.TabIndex = 11;
+            this.userRadioButton.TabStop = true;
+            this.userRadioButton.Text = "user Login";
+            this.userRadioButton.UseVisualStyleBackColor = true;
             // 
-            // pictureBox1
+            // logoPictureBox
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(25, 85);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(200, 190);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 12;
-            this.pictureBox1.TabStop = false;
-            // 
-            // newUserButton
-            // 
-            this.newUserButton.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.newUserButton.Location = new System.Drawing.Point(64, 177);
-            this.newUserButton.Margin = new System.Windows.Forms.Padding(4);
-            this.newUserButton.Name = "newUserButton";
-            this.newUserButton.Size = new System.Drawing.Size(100, 28);
-            this.newUserButton.TabIndex = 9;
-            this.newUserButton.Text = "New User";
-            this.newUserButton.UseVisualStyleBackColor = false;
+            this.logoPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("logoPictureBox.Image")));
+            this.logoPictureBox.Location = new System.Drawing.Point(23, 27);
+            this.logoPictureBox.Margin = new System.Windows.Forms.Padding(4);
+            this.logoPictureBox.Name = "logoPictureBox";
+            this.logoPictureBox.Size = new System.Drawing.Size(200, 248);
+            this.logoPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.logoPictureBox.TabIndex = 12;
+            this.logoPictureBox.TabStop = false;
             // 
             // userLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 300);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.radioButton2);
-            this.Controls.Add(this.radioButton1);
+            this.Controls.Add(this.logoPictureBox);
+            this.Controls.Add(this.userRadioButton);
+            this.Controls.Add(this.adminRadioButton);
             this.Controls.Add(this.groupBox1);
             this.Name = "userLogin";
             this.Text = "userLogin";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.logoPictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -229,18 +230,18 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox passwordTextBox;
+        private System.Windows.Forms.TextBox emailTextBox;
         private System.Windows.Forms.Button exitButton;
         private System.Windows.Forms.Button clearButton;
         private System.Windows.Forms.Button loginButton;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label passwordLabel;
+        private System.Windows.Forms.Label emailLabel;
+        private System.Windows.Forms.RadioButton adminRadioButton;
+        private System.Windows.Forms.RadioButton userRadioButton;
+        private System.Windows.Forms.PictureBox logoPictureBox;
         private System.Windows.Forms.Button newUserButton;
     }
 }
