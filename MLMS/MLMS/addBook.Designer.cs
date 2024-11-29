@@ -70,7 +70,9 @@
             // publishDateTimePicker
             // 
             resources.ApplyResources(this.publishDateTimePicker, "publishDateTimePicker");
+            this.publishDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.publishDateTimePicker.Name = "publishDateTimePicker";
+            this.publishDateTimePicker.ValueChanged += new System.EventHandler(this.publishDateTimePicker_ValueChanged);
             // 
             // editionTextBox
             // 
@@ -147,6 +149,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.groupBox1);
             this.Name = "addBook";
+            this.Load += new System.EventHandler(this.addBook_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);

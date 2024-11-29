@@ -4,15 +4,28 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Configuration;
 
 namespace MLMS
 {
     public partial class addBook : Form
     {
+        // Define the connection string (update with your connection string)
+        //private const string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=App_Data\Library.mdf;Integrated Security=True;Connect Timeout=30;";
+        //private const string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Library.mdf;Integrated Security=True;Connect Timeout=30;";
+        //"C:\School_Projects\Git_Repositories\MLMS\MLMS\MLMS\App_Data\Library.mdf"
+        private const string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\School_Projects\Git_Repositories\MLMS\MLMS\MLMS\App_Data\Library.mdf;Integrated Security=True;Connect Timeout=30;";
+        //string connectionString = System.Configuration.ConfigurationManager.connectionStrings["LibraryEntities"].ConnectionString;
+        //string connectionString;
+        // BookName PublishDate Edition
+
+
         public addBook()
         {
             InitializeComponent();
@@ -27,6 +40,9 @@ namespace MLMS
 
         private void addButton_Click(object sender, EventArgs e)
         {
+            MessageBox.Show(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location));
+            MessageBox.Show(Directory.GetCurrentDirectory());
+            
             // Retrieve values from the form inputs
             string bookName = bookTextBox.Text;
             string isbn = ISBNtextBox.Text;
@@ -35,12 +51,10 @@ namespace MLMS
             string edition = editionTextBox.Text;
             string description = descriptionRichTextBox.Text;
 
-            // Define the connection string (update with your connection string)
-            string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\santh\Documents\GitHub\MLMS\MLMS\MLMS\bin\Debug\Library.mdf;Integrated Security=True;Connect Timeout=30;";
-
+            
             // SQL query to insert the book into the database
-            string query = "INSERT INTO Book (BookName, ISBN, Author, PublishedDate, Edition, Description) " +
-                           "VALUES (@BookName, @ISBN, @Author, @PublishedDate, @Edition, @Description)";
+            string query = "INSERT INTO Book (Title, ISBN, Author, YearPublished, Description) " +
+                           "VALUES (@BookName, @ISBN, @Author, @PublishedDate, @Description)";
 
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
@@ -56,7 +70,7 @@ namespace MLMS
                     cmd.Parameters.AddWithValue("@ISBN", isbn);
                     cmd.Parameters.AddWithValue("@Author", author);
                     cmd.Parameters.AddWithValue("@PublishedDate", publishedDate);
-                    cmd.Parameters.AddWithValue("@Edition", edition);
+                    //cmd.Parameters.AddWithValue("@Edition", edition);
                     cmd.Parameters.AddWithValue("@Description", description);
 
                     // Execute the command
@@ -129,7 +143,7 @@ namespace MLMS
             string edition = editionTextBox.Text;
             string description = descriptionRichTextBox.Text;
 
-            string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Path\To\Library.mdf;Integrated Security=True;Connect Timeout=30;";
+            //string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\School_Projects\Git_Repositories\MLMS\MLMS\MLMS\bin\Debug\App_Data\Library.mdf;Integrated Security=True;Connect Timeout=30;";
             string query = "INSERT INTO Book (BookName, ISBN, Author, PublishedDate, Edition, Description) VALUES (@BookName, @ISBN, @Author, @PublishedDate, @Edition, @Description)";
 
             using (SqlConnection conn = new SqlConnection(connectionString))
@@ -169,6 +183,16 @@ namespace MLMS
             authorTextBox.Clear();
             editionTextBox.Clear();
             descriptionRichTextBox.Clear();
+        }
+
+        private void addBook_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void publishDateTimePicker_ValueChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

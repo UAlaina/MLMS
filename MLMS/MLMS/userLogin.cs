@@ -83,5 +83,10 @@ namespace MLMS
             addMemberForm newUserForm = new addMemberForm();
             newUserForm.Show();
         }
+
+        private void userLogin_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

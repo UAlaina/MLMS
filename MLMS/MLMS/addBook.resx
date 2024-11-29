@@ -121,6 +121,9 @@
   <data name="groupBox1.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>Zoom</value>
   </data>
+  <data name="publishDateTimePicker.CustomFormat" xml:space="preserve">
+    <value>yyyy</value>
+  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="publishDateTimePicker.Location" type="System.Drawing.Point, System.Drawing">
     <value>229, 217</value>
@@ -558,9 +561,9 @@
   <data name="&gt;&gt;groupBox1.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="$this.Localizable" type="System.Boolean, mscorlib">
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
-  </data>
+  </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>8, 16</value>
   </data>
@@ -3664,17 +3667,5 @@
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="BookAddedSuccessfully" xml:space="preserve">
-    <value>Book added successfully!</value>
-  </data>
-  <data name="BookAdditionError" xml:space="preserve">
-    <value>Error adding the book.</value>
-  </data>
-  <data name="DatabaseError" xml:space="preserve">
-    <value>An error occurred while connecting to the database:</value>
-  </data>
-  <data name="EmptyFieldError" xml:space="preserve">
-    <value>Please fill in all the required fields.</value>
   </data>
 </root>

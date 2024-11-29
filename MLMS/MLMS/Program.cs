@@ -16,6 +16,9 @@ namespace MLMS
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            //Application.Run(new userLogin());
+            //Application.Run(new mainDashbboard());
+            //Application.Run(new mainDash());
             Application.Run(new addBook());
         }
     }

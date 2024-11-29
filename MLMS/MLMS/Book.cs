@@ -11,7 +11,7 @@ namespace MLMS
         public string BookName { get; set; }
         public string ISBN { get; set; }
         public string Author { get; set; }
-        public DateTime PublishedDate { get; set; }
+        public int PublishedDate { get; set; }
         public string Edition { get; set; }
         public string Description { get; set; }
     }
